@@ -11,24 +11,26 @@
 for ( var i = 0; i < document.links.length; ++i) {
 	myHref = document.links[i].href;
 
-	linkText = document.links[i].firstChild.data;
-	if (linkText != null) {
-		linkText = linkText.toLowerCase();
-//		alert(linkText);
-		if (linkText.indexOf(".gif") >= 0 || linkText.indexOf(".png") >= 0
-				|| linkText.indexOf(".jpeg") >= 0
-				|| linkText.indexOf(".jpg") >= 0
-				|| linkText.indexOf(".bmp") >= 0)
+	if (document.links[i].firstChild != null) {
+		linkText = document.links[i].firstChild.data;
+		if (linkText != null) {
+			linkText = linkText.toLowerCase();
+	//		alert(linkText);
+			if (linkText.indexOf(".gif") >= 0 || linkText.indexOf(".png") >= 0
+					|| linkText.indexOf(".jpeg") >= 0
+					|| linkText.indexOf(".jpg") >= 0
+					|| linkText.indexOf(".bmp") >= 0)
 
-		{
-			var myIMG = document.createElement("img");
-			myIMG.src = document.links[i].href;
-			myIMG.alt = linkText;
-			myIMG.title = linkText;
-			document.links[i].appendChild(document.createElement("br"));
-			document.links[i].appendChild(myIMG);
-			document.links[i].appendChild(document.createElement("br"));
-//			alert(linkText);
+			{
+				var myIMG = document.createElement("img");
+				myIMG.src = document.links[i].href;
+				myIMG.alt = linkText;
+				myIMG.title = linkText;
+				document.links[i].appendChild(document.createElement("br"));
+				document.links[i].appendChild(myIMG);
+				document.links[i].appendChild(document.createElement("br"));
+	//			alert(linkText);
+			}
 		}
 	}
 //	 document.write("<br>" + i+"="+myHref);
