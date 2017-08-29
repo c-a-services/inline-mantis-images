@@ -1,0 +1,20 @@
+{
+  "name": "Inline Mantis Images",
+  "version": "1.2",
+   
+  "description": "Include links to images in page as images",
+  "icons": { "48": "icon48.png",
+          "128": "icon128.png" },
+
+  
+  "content_scripts": [
+    {
+      "matches": [
+          "http://*/*",
+          "<all_urls>"
+          ],
+      "js": ["inlineImages.js"],
+      "run_at": "document_end"
+    }
+  ]
+}
